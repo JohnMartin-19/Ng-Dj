@@ -32,7 +32,7 @@ def departmentApi(request,id=0):
     elif request.method =='DELETE':
         department = Department.objects.get(DepartmentId=id)
         department.delete()
-        return JsonResponse('Deleted Successfully')  
+        return JsonResponse('Deleted Successfully',safe=False)  
     
 
 @csrf_exempt
