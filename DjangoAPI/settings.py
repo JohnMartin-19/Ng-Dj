@@ -28,6 +28,10 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+#whitelisting dormains
+CORS_ORIGIN_WHITELIST = True
+CORS_ORIGIN_ALLOW_ALL = True
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #3rd Parties
-    'corhsheaders',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
