@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 #whitelisting dormains
-CORS_ORIGIN_WHITELIST = True
+
 CORS_ORIGIN_ALLOW_ALL = True
 
 # Application definition
