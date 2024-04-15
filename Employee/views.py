@@ -43,7 +43,7 @@ def employeeApi(request,id=0):
         return JsonResponse(employee_serializer.data,safe=False)
     
     elif request.method == "POST":
-        employee_data = JSONParser.parse(request)
+        employee_data = JSONParser().parse(request)
         employee_serializer = EmployeeSerializer(data=employee_data)
         if employee_serializer.is_valid():
             employee_serializer.save()
