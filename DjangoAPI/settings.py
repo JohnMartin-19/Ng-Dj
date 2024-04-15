@@ -44,6 +44,9 @@ INSTALLED_APPS = [
 
     #3rd Parties
     'corsheaders',
+    #apps
+    'rest_framework',
+    "Employee.apps.EmployeeConfig",
 ]
 
 MIDDLEWARE = [
