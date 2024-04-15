@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from .models import Department,Employee
 
-class DepartmentSrializer(serializers.ModelSerializer):
+class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Department
         fields = ('DepartmentId','DepartmentName')
