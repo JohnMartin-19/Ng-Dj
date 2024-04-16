@@ -13,6 +13,7 @@ import { SharedService } from './shared.service';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { RouterModule } from '@angular/router';
+import { routes } from './app.routes';
 
 
 
@@ -28,14 +29,16 @@ import { RouterModule } from '@angular/router';
   imports: [
     AppComponent,
     CommonModule,
-    RouterModule,
+    RouterModule.forRoot([]),
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers:[],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],  providers:[SharedService],
   bootstrap:[AppComponent]
 })
 export class AppModule { }

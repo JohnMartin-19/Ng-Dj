@@ -9,12 +9,12 @@ import { DepartmentComponent } from './department/department.component';
 
 //setting routes
 const routes: Routes = [
-  {path:'employee',component:EmployeeComponent},
-  {path:'department',component:DepartmentComponent}
-]
+  {path: 'employee', component: EmployeeComponent },
+  {path: 'department', component:DepartmentComponent}
+];
 
 @NgModule({
-  declarations: [],
+  declarations: [EmployeeComponent,DepartmentComponent],
   imports: [
     CommonModule,
     RouterModule.forRoot(routes)
