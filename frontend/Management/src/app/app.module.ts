@@ -18,7 +18,6 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent,
     DepartmentComponent,
     ShowDeptComponent,
     AddEditDeptComponent,
@@ -27,6 +26,7 @@ import { RouterModule } from '@angular/router';
     AddEditEmpComponent
   ],
   imports: [
+    AppComponent,
     CommonModule,
     RouterModule,
     AppRoutingModule,
@@ -35,10 +35,7 @@ import { RouterModule } from '@angular/router';
     FormsModule,
     ReactiveFormsModule
   ],
-  schemas: [
-    CUSTOM_ELEMENTS_SCHEMA
-  ],
-  providers:[SharedService],
+  providers:[],
   bootstrap:[AppComponent]
 })
 export class AppModule { }
