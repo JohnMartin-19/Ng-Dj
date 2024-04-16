@@ -19,6 +19,7 @@ import { routes } from './app.routes';
 
 @NgModule({
   declarations: [
+    AppComponent,
     DepartmentComponent,
     ShowDeptComponent,
     AddEditDeptComponent,
@@ -27,18 +28,17 @@ import { routes } from './app.routes';
     AddEditEmpComponent
   ],
   imports: [
-    AppComponent,
-    CommonModule,
-    RouterModule.forRoot([]),
-    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    RouterModule.forRoot([...routes])
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
-  ],  providers:[SharedService],
+  ],
+  providers:[SharedService],
   bootstrap:[AppComponent]
 })
 export class AppModule { }
