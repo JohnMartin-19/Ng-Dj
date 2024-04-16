@@ -1,5 +1,4 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -14,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
+import path from 'path';
 
 
 
@@ -34,7 +34,11 @@ import { routes } from './app.routes';
     ReactiveFormsModule,
     AppRoutingModule,
     routes,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot([
+      {path:'department',component:DepartmentComponent},
+      {path:'employee', component:EmployeeComponent},
+      {path:'**', redirectTo:'/landing'}
+    ])
   ],
   schemas:[
     CUSTOM_ELEMENTS_SCHEMA
