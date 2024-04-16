@@ -33,9 +33,10 @@ import { routes } from './app.routes';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule.forRoot([...routes])
+    routes,
+    RouterModule.forRoot(routes)
   ],
-  schemas: [
+  schemas:[
     CUSTOM_ELEMENTS_SCHEMA
   ],
   providers:[SharedService],
