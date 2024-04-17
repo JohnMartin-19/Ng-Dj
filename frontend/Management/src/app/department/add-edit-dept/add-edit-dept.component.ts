@@ -23,5 +23,18 @@ export class AddEditDeptComponent {
       DepartmentId:this.DepartmentId,
       DepartmentName:this.DepartmentName
     }
+    this.service.addDept(val).subscribe(res=> {
+      alert(res.toString())
+    })
+  }
+
+  updateDept(){
+    var val = {
+      DepartmentId:this.DepartmentId,
+      DepartmentName:this.DepartmentName
+    }
+    this.service.updateDept(val).subscribe(res=> {
+      alert(res.toString())
+    })
   }
 }
