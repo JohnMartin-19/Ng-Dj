@@ -25,3 +25,26 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## BACKEND
+
+This project side was generated and powered by Python(Django)
+To start backend you need install python, pip and Django:
+bash
+sh runserver.sh
+
+
+## YET TO ADD DOCKER
+In this project I used Docker for running backend service. To use docker you can follow these steps:
+1. Install Docker from official site https://www.docker.com/.
+2. Open terminal or cmd.
+3. Go to folder where your project is located (for example C:\Users\Username\Documents\GitHub\project_name\).
+4. Run command:
+   bash
+   sh run_django_in_docker.sh
+5. After successfull work of script you should see message "Starting django..." and IP address of container. Copy it.
+Now you should see message "Starting django..." If everything went right you can open http://localhost:8000 in browser - it
+After that you should see message "Starting django..." If everything went right you can open http://localhost:8000 in browser -
+After that you should see message "Starting django..." If everything went right you can open http://localhost:8000 in browser -
+After that you should see message "Starting django..." If everything went right you can open browser and go to http://localhost:800 
