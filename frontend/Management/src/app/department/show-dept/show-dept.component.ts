@@ -41,6 +41,15 @@ export class ShowDeptComponent {
 
   }
 
+  deleteClick(item:any){
+    if(confirm('Are you sure you want to delete??')){
+      this.service.deleteDept(item.DepartmentId).subscribe(data=> {
+        alert(data.toString)
+        this.refreshDeptList()
+      })
+    }
+  }
+
   refreshDeptList(){
     this.service.getDeptList().subscribe(data => {this.DepartmentList= data});
   }
