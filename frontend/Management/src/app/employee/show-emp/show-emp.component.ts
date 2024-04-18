@@ -8,7 +8,7 @@ import { SharedService } from '../../shared.service';
 export class ShowEmpComponent {
 
   constructor(private service:SharedService) {}
-
+  //declaring types
   EmployeeList: any =[];
 
   ModalTitle:string | undefined;
@@ -48,9 +48,9 @@ export class ShowEmpComponent {
 
   deleteClick(item:any){
     if(confirm('Are you sure you want to delete??')){
-      this.service.deleteEmp(item.EmployeeId).subscribe(data=> {
+      this.service.deleteEmployee(item.EmployeeId).subscribe(data=> {
         alert(data.toString)
-        this.refreshDeptList()
+        this.refreshEmpList()
       })
     }
   }
