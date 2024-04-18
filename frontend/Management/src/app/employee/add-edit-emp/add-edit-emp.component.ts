@@ -25,31 +25,52 @@ export class AddEditEmpComponent {
   }
 
   loadDepartmentList(){
-    this.service.getAllDeparmentNames().subscribe((data:any) => {
+    this.service.getAllDepartmentsNames().subscribe((data:any) => {
       this.DepartmentList = data;
       this.EmployeeId = this.emp.EmployeeId
       this.EmployeeName = this.emp.EmployeeName
       this.Department = this.emp.Department
+      this.Date_of_joining=this.emp.Date_of_joining
+      this.PhotoFileName=this.emp.PhotoFileName
+      this.PhotoFilePath=this.service.PhotoUrl+this.emp.PhotoFilePath
     })
   }
 
-  addDept(){
+  addEmployee(){
     var val = {
-      DepartmentId:this.DepartmentId,
-      DepartmentName:this.DepartmentName
+      EmployeeId:this.EmployeeId,
+      EmployeeName:this.EmployeeName,
+      Department:this.Department,
+      Date_of_joining:this.Date_of_joining,
+      PhotoFileName:this.PhotoFileName,
+
     }
-    this.service.addDept(val).subscribe(res=> {
+    this.service.addEmployee(val).subscribe(res=> {
       alert(res.toString())
     })
   }
 
-  updateDept(){
+  updateEmployee(){
     var val = {
-      DepartmentId:this.DepartmentId,
-      DepartmentName:this.DepartmentName
+      EmployeeId:this.EmployeeId,
+      EmployeeName:this.EmployeeName,
+      Department:this.Department,
+      Date_of_joining:this.Date_of_joining,
+      PhotoFileName:this.PhotoFileName,
     }
-    this.service.updateDept(val).subscribe(res=> {
+    this.service.updateEmployee(val).subscribe(res=> {
       alert(res.toString())
+    })
+  }
+
+  uploadPhoto(e:any){
+    var file = e.target.files[0];
+    const formData:FormData=new FormData()
+    formData.append('UploadedFile',file,file.name);
+
+    this .service.uploadImage(formData).subscribe((data:any) => {
+      this.PhotoFileName=data.toString();
+      this.PhotoFilePath= this.service.PhotoUrl+this.PhotoFileName;
     })
   }
 }
