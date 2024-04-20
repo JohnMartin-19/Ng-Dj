@@ -9,7 +9,7 @@ export class SharedService {
   readonly PhotoUrl = 'http://127.0.0.1:8000/media/'
 
   constructor(private http:HttpClient) {}
-  //Department API Consuming
+  //Consuming Department API
   getDeptList():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl +  '/department/');
   }
